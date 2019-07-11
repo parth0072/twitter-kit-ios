@@ -448,11 +448,9 @@
 		AAF0C9B92011991B0057F438 /* TWTRSESelectionTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C95B2011991B0057F438 /* TWTRSESelectionTableViewController.h */; };
 		AAF0C9BB2011991B0057F438 /* TWTRSEBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF0C95D2011991B0057F438 /* TWTRSEBaseTableViewCell.m */; };
 		AAF0C9BC2011991B0057F438 /* TWTRSETweetTextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF0C95F2011991B0057F438 /* TWTRSETweetTextViewContainer.m */; };
-		AAF0C9BD2011991B0057F438 /* TWTRSETweetComposerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9602011991B0057F438 /* TWTRSETweetComposerViewController.h */; };
 		AAF0C9BE2011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF0C9612011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.m */; };
 		AAF0C9BF2011991B0057F438 /* TWTRSEConfigurationSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF0C9622011991B0057F438 /* TWTRSEConfigurationSelectionTableViewCell.m */; };
 		AAF0C9C02011991B0057F438 /* TWTRSETweetTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9632011991B0057F438 /* TWTRSETweetTextView.h */; };
-		AAF0C9C12011991B0057F438 /* TWTRSETweetComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF0C9642011991B0057F438 /* TWTRSETweetComposerViewController.m */; };
 		AAF0C9C22011991B0057F438 /* TWTRSETweetTextViewContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9652011991B0057F438 /* TWTRSETweetTextViewContainer.h */; };
 		AAF0C9C32011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9662011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.h */; };
 		AAF0C9C42011991B0057F438 /* TWTRSETweetCustomCardAttachmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9682011991B0057F438 /* TWTRSETweetCustomCardAttachmentView.h */; };
@@ -496,7 +494,6 @@
 		AAF0C9EA2011991B0057F438 /* TWTRSELoadingTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9912011991B0057F438 /* TWTRSELoadingTableViewCell.h */; };
 		AAF0C9EB2011991B0057F438 /* TWTRSELocationMapTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF0C9922011991B0057F438 /* TWTRSELocationMapTableViewHeaderView.m */; };
 		AAF0C9ED2011998F0057F438 /* TwitterShareExtensionUI.h in Headers */ = {isa = PBXBuildFile; fileRef = AAF0C9EC2011998F0057F438 /* TwitterShareExtensionUI.h */; };
-		AAF0C9F120119C0A0057F438 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0C9EE20119BB40057F438 /* CoreLocation.framework */; };
 		AAF0C9F220119C2C0057F438 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0C9F020119BED0057F438 /* MapKit.framework */; };
 		BF318EB21ADF320A0082353A /* TWTRDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D0AE5A71AC7359D00884B45 /* TWTRDateFormatter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BF318F031AE03B400082353A /* TWTRComposer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5154B8119D4E6130054DECF /* TWTRComposer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1173,11 +1170,9 @@
 		AAF0C95B2011991B0057F438 /* TWTRSESelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRSESelectionTableViewController.h; sourceTree = "<group>"; };
 		AAF0C95D2011991B0057F438 /* TWTRSEBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRSEBaseTableViewCell.m; sourceTree = "<group>"; };
 		AAF0C95F2011991B0057F438 /* TWTRSETweetTextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRSETweetTextViewContainer.m; sourceTree = "<group>"; };
-		AAF0C9602011991B0057F438 /* TWTRSETweetComposerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRSETweetComposerViewController.h; sourceTree = "<group>"; };
 		AAF0C9612011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRSETweetComposerTableViewDataSource.m; sourceTree = "<group>"; };
 		AAF0C9622011991B0057F438 /* TWTRSEConfigurationSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRSEConfigurationSelectionTableViewCell.m; sourceTree = "<group>"; };
 		AAF0C9632011991B0057F438 /* TWTRSETweetTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRSETweetTextView.h; sourceTree = "<group>"; };
-		AAF0C9642011991B0057F438 /* TWTRSETweetComposerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRSETweetComposerViewController.m; sourceTree = "<group>"; };
 		AAF0C9652011991B0057F438 /* TWTRSETweetTextViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRSETweetTextViewContainer.h; sourceTree = "<group>"; };
 		AAF0C9662011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRSETweetComposerTableViewDataSource.h; sourceTree = "<group>"; };
 		AAF0C9682011991B0057F438 /* TWTRSETweetCustomCardAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRSETweetCustomCardAttachmentView.h; sourceTree = "<group>"; };
@@ -1384,7 +1379,6 @@
 			files = (
 				AA3E099220119CC000792255 /* MobileCoreServices.framework in Frameworks */,
 				AAF0C9F220119C2C0057F438 /* MapKit.framework in Frameworks */,
-				AAF0C9F120119C0A0057F438 /* CoreLocation.framework in Frameworks */,
 				37ED04661CE3E81C003DC129 /* SafariServices.framework in Frameworks */,
 				DB2242801C3F24AF008A6DC7 /* Security.framework in Frameworks */,
 				DB22426E1C3F22BC008A6DC7 /* QuartzCore.framework in Frameworks */,
@@ -2315,11 +2309,9 @@
 			isa = PBXGroup;
 			children = (
 				AAF0C95F2011991B0057F438 /* TWTRSETweetTextViewContainer.m */,
-				AAF0C9602011991B0057F438 /* TWTRSETweetComposerViewController.h */,
 				AAF0C9612011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.m */,
 				AAF0C9622011991B0057F438 /* TWTRSEConfigurationSelectionTableViewCell.m */,
 				AAF0C9632011991B0057F438 /* TWTRSETweetTextView.h */,
-				AAF0C9642011991B0057F438 /* TWTRSETweetComposerViewController.m */,
 				AAF0C9652011991B0057F438 /* TWTRSETweetTextViewContainer.h */,
 				AAF0C9662011991B0057F438 /* TWTRSETweetComposerTableViewDataSource.h */,
 				AAF0C9672011991B0057F438 /* Attachment Views */,
@@ -2645,7 +2637,6 @@
 				20E4EF851F8573C5008F477A /* TWTRVideoPlaybackState.h in Headers */,
 				AAF0C99D2011991B0057F438 /* TWTRSECardPreviewProvider.h in Headers */,
 				37550597196B1692001A914F /* TWTRTweetImageView.h in Headers */,
-				AAF0C9BD2011991B0057F438 /* TWTRSETweetComposerViewController.h in Headers */,
 				375F9E411977274500B0D102 /* TWTRVerifiedView.h in Headers */,
 				3716DCAF1C04E6FE0093D341 /* TWTRImageScrollView.h in Headers */,
 				AAF0C9D12011991B0057F438 /* TWTRSELocalizedString.h in Headers */,
@@ -3372,7 +3363,6 @@
 				3D1D756D18FC783900C246AB /* TWTRViewUtil.m in Sources */,
 				AAF0C9962011991B0057F438 /* TWTRSETweetShareViewController.m in Sources */,
 				AAF0C9992011991B0057F438 /* TWTRSETweetURLAttachmentMetadata.m in Sources */,
-				AAF0C9C12011991B0057F438 /* TWTRSETweetComposerViewController.m in Sources */,
 				3716DCB01C04E6FE0093D341 /* TWTRImageScrollView.m in Sources */,
 				AAF0C9CB2011991B0057F438 /* TWTRSETweetImageAttachmentView.m in Sources */,
 				3DE830501B1180EB00D85486 /* TWTRImageLoaderTaskManager.m in Sources */,
