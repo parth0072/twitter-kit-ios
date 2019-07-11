@@ -28,11 +28,10 @@
 
 @implementation TWTRTweetDelegationHelper
 
-+ (void)performDefaultActionForTappingProfileForUser:(TWTRUser *)user
++ (NSURL *)performDefaultActionForTappingProfileForUser:(TWTRUser *)user
 {
     NSURL *webURL = [self URLWithReferral:user.profileURL];
-    NSURL *deepLinkURL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@", user.screenName]];
-    [self openURL:webURL deeplinkURL:deepLinkURL];
+    return webURL;
 }
 
 + (void)performDefaultActionForTappingURL:(NSURL *)URL
@@ -40,50 +39,51 @@
     [[UIApplication sharedApplication] openURL:URL];
 }
 
-+ (void)performDefaultActionForTappingHashtag:(TWTRTweetHashtagEntity *)hashtag
++ (NSURL *)performDefaultActionForTappingHashtag:(TWTRTweetHashtagEntity *)hashtag
 {
     NSURL *webURL = [self hashtagEntityURLString:hashtag.text];
-    NSURL *deepLinkURL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://search?query=%%23%@", hashtag.text]];
-
-    [self openURL:webURL deeplinkURL:deepLinkURL];
+    return webURL;
 }
 
-+ (void)performDefaultActionForTappingCashtag:(TWTRTweetCashtagEntity *)cashtag
++ (NSURL *)performDefaultActionForTappingCashtag:(TWTRTweetCashtagEntity *)cashtag
 {
     NSURL *webURL = [self cashtagEntityURLString:cashtag.text];
-    NSURL *deepLinkURL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://search?query=%%24%@", cashtag.text]];
-    [self openURL:webURL deeplinkURL:deepLinkURL];
+    return webURL;
+    
+    //    NSURL *deepLinkURL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://search?query=%%24%@", cashtag.text]];
+    //    [self openURL:webURL deeplinkURL:deepLinkURL];
 }
 
-+ (void)performDefaultActionForTappingUserMention:(TWTRTweetUserMentionEntity *)userMention
++ (NSURL *)performDefaultActionForTappingUserMention:(TWTRTweetUserMentionEntity *)userMention
 {
     NSURL *webURL = [self userMentionURLString:userMention.screenName];
-    NSURL *deepLinkURL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@", userMention.screenName]];
-    [self openURL:webURL deeplinkURL:deepLinkURL];
+    return webURL;
+    //    NSURL *deepLinkURL = [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@", userMention.screenName]];
+    //    [self openURL:webURL deeplinkURL:deepLinkURL];
 }
 
 + (void)performDefaultActionForTappingTweet:(TWTRTweet *)tweet
 {
     NSURL *webURL = [self URLWithReferral:tweet.permalink];
     NSURL *deepLinkURL = [TWTRURLUtility deepLinkURLForTweet:tweet];
-
+    
     [self openURL:webURL deeplinkURL:deepLinkURL];
 }
 
 + (void)openURL:(NSURL *)webURL deeplinkURL:(NSURL *)deepLinkURL
 {
     BOOL iOS10 = [[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)];
-
+    
     if (iOS10) {
         // Attempt Deep-Link
         [[UIApplication sharedApplication] openURL:deepLinkURL
-            options:@{}
-            completionHandler:^(BOOL success) {
-                if (success == NO) {
-                    // Open on web
-                    [[UIApplication sharedApplication] openURL:webURL];
-                }
-            }];
+                                           options:@{}
+                                 completionHandler:^(BOOL success) {
+                                     if (success == NO) {
+                                         // Open on web
+                                         [[UIApplication sharedApplication] openURL:webURL];
+                                     }
+                                 }];
     } else {
         if ([[UIApplication sharedApplication] canOpenURL:deepLinkURL]) {
             // Deep-link

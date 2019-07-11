@@ -33,15 +33,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * If iOS 9+ deep links the the user's profile.
  */
-+ (void)performDefaultActionForTappingProfileForUser:(TWTRUser *)user;
++ (NSURL *)performDefaultActionForTappingProfileForUser:(TWTRUser *)user;
 
 /*
  * If iOS 9+ deep links the the given URL.
  */
 + (void)performDefaultActionForTappingURL:(NSURL *)URL;
-+ (void)performDefaultActionForTappingHashtag:(TWTRTweetHashtagEntity *)hashtag;
-+ (void)performDefaultActionForTappingCashtag:(TWTRTweetCashtagEntity *)cashtag;
-+ (void)performDefaultActionForTappingUserMention:(TWTRTweetUserMentionEntity *)userMention;
++ (NSURL *)performDefaultActionForTappingHashtag:(TWTRTweetHashtagEntity *)hashtag;
++ (NSURL *)performDefaultActionForTappingCashtag:(TWTRTweetCashtagEntity *)cashtag;
++ (NSURL *)performDefaultActionForTappingUserMention:(TWTRTweetUserMentionEntity *)userMention;
 + (void)performDefaultActionForTappingTweet:(TWTRTweet *)tweet;
 
 + (NSURL *)URLWithReferral:(NSURL *)originalURL;

@@ -26,12 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  The style for Tweet views.
  */
 typedef NS_ENUM(NSUInteger, TWTRTweetViewStyle) {
-
+    
     /**
      *  A full-size Tweet view. Displays images if present.
      */
     TWTRTweetViewStyleRegular,
-
+    
     /**
      *  A small Tweet view, primarily designed to be used in table views.
      */
@@ -42,12 +42,12 @@ typedef NS_ENUM(NSUInteger, TWTRTweetViewStyle) {
  *  A default combination of colors for Tweet views.
  */
 typedef NS_ENUM(NSUInteger, TWTRTweetViewTheme) {
-
+    
     /**
      *  Official light theme.
      */
     TWTRTweetViewThemeLight,
-
+    
     /**
      *  Official dark theme.
      */
@@ -56,53 +56,53 @@ typedef NS_ENUM(NSUInteger, TWTRTweetViewTheme) {
 
 /**
  `TWTRTweetView` displays a single Tweet to the user. It handles background taps and other actions displayed to the user.
-
-    TWTRAPIClient *APIClient = [[TWTRAPIClient alloc] init];
-    [[APIClient loadTweetWithID:@"20" completion:^(TWTRTweet *tweet, NSError *error) {
-        if (tweet) {
-            TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet];
-            [self.view addSubview:tweetView];
-        } else {
-            NSLog(@"Error loading Tweet: %@", [error localizedDescription]);
-        }
-    }];
-
+ 
+ TWTRAPIClient *APIClient = [[TWTRAPIClient alloc] init];
+ [[APIClient loadTweetWithID:@"20" completion:^(TWTRTweet *tweet, NSError *error) {
+ if (tweet) {
+ TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet];
+ [self.view addSubview:tweetView];
+ } else {
+ NSLog(@"Error loading Tweet: %@", [error localizedDescription]);
+ }
+ }];
+ 
  ## Interaction
-
+ 
  The `TWTRTweetViewDelegate` is notified:
-
-   - When the background is tapped.
-   - When a link is selected.
-   - When the share button is tapped.
-   - When the share action completes.
-   - When the favorite action completes.
-   - When the video (if available) is paused or started to play.
-
+ 
+ - When the background is tapped.
+ - When a link is selected.
+ - When the share button is tapped.
+ - When the share action completes.
+ - When the favorite action completes.
+ - When the video (if available) is paused or started to play.
+ 
  ## Usage in UITableView
-
+ 
  To allow for usage in a `UITableView`, the `configureWithTweet:` method allows configuration of an existing `TWTRTweetView` without having to create a new instance.
-
+ 
  ## Sizing
-
+ 
  When using Auto Layout, feel free to set a width or margin on the Tweet view. The height will be calculated automatically. For old-fashioned frame based layout you may use the standard `sizeThatFits:` method to calculate the appropriate height for a given width:
-
-    // Find the height for a given width (20pts on either side)
-    CGFloat desiredHeight = [tweetView sizeThatFits:CGSizeMake(self.view.frame.size.width - 40, CGFLOAT_MAX)].height;
-
+ 
+ // Find the height for a given width (20pts on either side)
+ CGFloat desiredHeight = [tweetView sizeThatFits:CGSizeMake(self.view.frame.size.width - 40, CGFLOAT_MAX)].height;
+ 
  ## UIAppearance
-
+ 
  You may use UIAppearance proxy objects to style certain aspects of Tweet views before those views are added to the view hierarchy.
-
-     // Using UIAppearance Proxy
-     [TWTRTweetView appearance].theme = TWTRTweetViewThemeDark;
-
-     // Setting colors directly
-     [TWTRTweetView appearance].primaryTextColor = [UIColor yellowColor];
-     [TWTRTweetView appearance].backgroundColor = [UIColor blueColor];
-
-     // Setting action button visibility
-     [TWTRTweetView appearance].showActionButtons = NO;
-
+ 
+ // Using UIAppearance Proxy
+ [TWTRTweetView appearance].theme = TWTRTweetViewThemeDark;
+ 
+ // Setting colors directly
+ [TWTRTweetView appearance].primaryTextColor = [UIColor yellowColor];
+ [TWTRTweetView appearance].backgroundColor = [UIColor blueColor];
+ 
+ // Setting action button visibility
+ [TWTRTweetView appearance].showActionButtons = NO;
+ 
  _Note:_ You can't change the theme through an appearance proxy after the view has already been added to the view hierarchy. Direct `theme` property access will work though.
  */
 @interface TWTRTweetView : UIView <UIAppearanceContainer>
@@ -196,15 +196,15 @@ typedef NS_ENUM(NSUInteger, TWTRTweetViewTheme) {
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 /**
-  Find the size that fits into a desired space. This is a system method on UIView but implemented on `TWTRTweetView`
-
-    // Calculate the desired height at 280 points wide
-    CGSize desiredSize = [tweetView sizeThatFits:CGSizeMake(280, CGFLOAT_MAX)];
-
-
-   @param size The space available. Should generally leave one orientation unconstrained, and the minimum width supported is 200pts.
-
-   @return The size that will fit into the space available.
+ Find the size that fits into a desired space. This is a system method on UIView but implemented on `TWTRTweetView`
+ 
+ // Calculate the desired height at 280 points wide
+ CGSize desiredSize = [tweetView sizeThatFits:CGSizeMake(280, CGFLOAT_MAX)];
+ 
+ 
+ @param size The space available. Should generally leave one orientation unconstrained, and the minimum width supported is 200pts.
+ 
+ @return The size that will fit into the space available.
  */
 - (CGSize)sizeThatFits:(CGSize)size;
 
@@ -224,7 +224,7 @@ typedef NS_ENUM(NSUInteger, TWTRTweetViewTheme) {
 /**
  * If the tweet contains media that is currently playing, this function will pause the current video.
  *
- * If a TWTRTweetVideo is being added to a UICollectionView, implement the delegate collectionView:didEndDisplayingCell:forItemAtIndexPath: 
+ * If a TWTRTweetVideo is being added to a UICollectionView, implement the delegate collectionView:didEndDisplayingCell:forItemAtIndexPath:
  * and call pauseVideo here so videos stop playing when the user scrolls off the screen.
  */
 - (void)pauseVideo;

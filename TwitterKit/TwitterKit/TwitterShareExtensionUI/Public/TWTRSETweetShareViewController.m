@@ -18,7 +18,6 @@
 #import "TWTRSETweetShareViewController.h"
 #import "TWTRSEAccount.h"
 #import "TWTRSESheetPresentationController.h"
-#import "TWTRSETweetComposerViewController.h"
 #import "TWTRSETweetShareConfiguration.h"
 #import "TWTRSETweetShareNavigationController.h"
 
@@ -26,7 +25,6 @@
 
 @property (nonatomic, readonly) TWTRSETweetShareConfiguration *configuration;
 @property (nonatomic, readonly) TWTRSETweetShareNavigationController *navigationController;
-@property (nonatomic, readonly) TWTRSETweetComposerViewController *composerViewController;
 
 @property (nonatomic, readonly) TWTRSESheetPresentationManager *sheetPresentationManager;
 
@@ -55,14 +53,7 @@
 {
     [super viewDidLoad];
 
-    _composerViewController = [[TWTRSETweetComposerViewController alloc] initWithConfiguration:_configuration];
-    _navigationController = [[TWTRSETweetShareNavigationController alloc] initWithRootViewController:_composerViewController];
 
-    // This controller acts as a façade to hide the navigation controller.
-    // Embed as a child:
-    [self addChildViewController:_navigationController];
-    [self.view addSubview:_navigationController.view];
-    [_navigationController didMoveToParentViewController:self];
 }
 
 - (void)viewWillLayoutSubviews

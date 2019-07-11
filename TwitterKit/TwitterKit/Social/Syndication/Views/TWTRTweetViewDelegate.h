@@ -30,11 +30,11 @@ typedef void (^TWTRAuthenticationCompletionHandler)(id<TWTRSessionStore> session
 
 /**
  Delegate for `TWTRTweetView` to receive updates on the user interacting with this particular Tweet view.
-
-    // Create the tweet view
-    TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet];
-    // Set the delegate
-    tweetView.delegate = self;
+ 
+ // Create the tweet view
+ TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet];
+ // Set the delegate
+ tweetView.delegate = self;
  */
 @protocol TWTRTweetViewDelegate <NSObject>
 
@@ -91,6 +91,10 @@ typedef void (^TWTRAuthenticationCompletionHandler)(id<TWTRSessionStore> session
  *  @param newState The state of the video. (TWTRVideoPlaybackStatePaused, TWTRVideoPlaybackStatePlaying, TWTRVideoPlaybackStateCompleted)
  */
 - (void)tweetView:(TWTRTweetView *)tweetView didChangePlaybackState:(TWTRVideoPlaybackState)newState;
+- (void)tweetView:(TWTRTweetView *)tweetView didTapTweetHashtagEntity:(NSURL *)url;
+- (void)tweetView:(TWTRTweetView *)tweetView didTapTweetCashtagEntity:(NSURL *)url;
+- (void)tweetView:(TWTRTweetView *)tweetView didTapTweetUserMentionEntity:(NSURL *)url;
+
 
 @end
 
