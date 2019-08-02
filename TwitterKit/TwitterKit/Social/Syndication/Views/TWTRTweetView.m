@@ -340,7 +340,7 @@ static TWTRTweetViewTheme const TWTRTweetViewDefaultTheme = TWTRTweetViewThemeLi
     self.layer.cornerRadius = self.showBorder ? TWTRTweetViewCornerRadius : 0.0;
     self.clipsToBounds = YES;
     
-    self.attachmentContainer.layer.borderColor = borderColor.CGColor;
+    self.attachmentContainer.layer.borderColor = [[UIColor clearColor] CGColor];
     self.attachmentContainer.layer.borderWidth = (2 * TWTRTweetViewBorderWidth);
     self.attachmentContainer.layer.cornerRadius = TWTRTweetViewCornerRadius;
 }
@@ -441,7 +441,9 @@ static TWTRTweetViewTheme const TWTRTweetViewDefaultTheme = TWTRTweetViewThemeLi
     [self.contentView updateMediaWithTweet:tweetToDisplay aspectRatio:aspectRatio];
     
     [self updateAttachmentViewWithTweet:tweetToDisplay];
-    
+    self.attachmentTopMarginConstraint.constant = 0;
+    self.attachmentBottomMarginConstraint.constant = 0;
+
     [self invalidateIntrinsicContentSize];
     [self setNeedsUpdateConstraints];
     [self setNeedsLayout];
@@ -452,9 +454,11 @@ static TWTRTweetViewTheme const TWTRTweetViewDefaultTheme = TWTRTweetViewThemeLi
     for (UIView *subview in self.attachmentContainer.subviews) {
         [subview removeFromSuperview];
     }
+    
     self.attachmentContentView = nil;
     self.attachmentTopMarginConstraint.constant = 0;
     self.attachmentBottomMarginConstraint.constant = 0;
+
     // Currently only show a quote tweet as an attachment
     // If content view already has media, does not show a quote tweet attachment
     if (/* DISABLES CODE */ (false)) {
@@ -520,8 +524,8 @@ static TWTRTweetViewTheme const TWTRTweetViewDefaultTheme = TWTRTweetViewThemeLi
     [TWTRViewUtil equateAttribute:NSLayoutAttributeLeading onView:self.contentView.profileHeaderView.fullname toView:self.attachmentContainer];
     [TWTRViewUtil equateAttribute:NSLayoutAttributeTrailing onView:(UIView *)self.contentView.profileHeaderView.twitterLogo toView:self.attachmentContainer];
     
-    _attachmentTopMarginConstraint = [TWTRViewUtil marginConstraintBetweenTopView:self.contentView bottomView:self.attachmentContainer];
-    _attachmentBottomMarginConstraint = [TWTRViewUtil marginConstraintBetweenTopView:self.attachmentContainer bottomView:self.actionContainer];
+    _attachmentTopMarginConstraint = 0;
+    _attachmentBottomMarginConstraint = 0;
     
     _attachmentTopMarginConstraint.active = YES;
     _attachmentBottomMarginConstraint.active = YES;

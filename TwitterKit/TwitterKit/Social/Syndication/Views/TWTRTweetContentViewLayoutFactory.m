@@ -141,15 +141,15 @@
 
 - (BOOL)allowsMediaCornerRounding
 {
-    return YES;
+    return NO;
 }
 
 - (void)applyConstraintsForContentView:(TWTRTweetContentView *)contentView
 {
     NSDictionary *views = @{
-        @"media": contentView.mediaView,
         @"profileHeader": contentView.profileHeaderView,
         @"text": contentView.tweetLabel,
+        @"media": contentView.mediaView,
     };
 
     NSDictionary *metrics = self.metrics.metricsDictionary;
@@ -160,7 +160,7 @@
     [TWTRViewUtil addVisualConstraints:@"H:|-regularMargin-[profileHeader]|" metrics:metrics views:views];
 
     [TWTRViewUtil addVisualConstraints:@"H:|-regularMargin-[text]-|" metrics:metrics views:views];
-    [TWTRViewUtil addVisualConstraints:@"H:|[media]|" views:views];  // Main image full width
+    [TWTRViewUtil addVisualConstraints:@"H:|-regularMargin-[media]-regularMargin-|" metrics:metrics views:views];  // Main image full width
 
     // Vertical
     [TWTRViewUtil constraintToTopOfSuperview:contentView.mediaView].active = YES;
