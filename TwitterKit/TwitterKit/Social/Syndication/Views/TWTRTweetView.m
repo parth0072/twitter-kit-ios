@@ -452,7 +452,9 @@ static TWTRTweetViewTheme const TWTRTweetViewDefaultTheme = TWTRTweetViewThemeLi
     for (UIView *subview in self.attachmentContainer.subviews) {
         [subview removeFromSuperview];
     }
-    
+    self.attachmentContentView = nil;
+    self.attachmentTopMarginConstraint.constant = 0;
+    self.attachmentBottomMarginConstraint.constant = 0;
     // Currently only show a quote tweet as an attachment
     // If content view already has media, does not show a quote tweet attachment
     if (/* DISABLES CODE */ (false)) {
