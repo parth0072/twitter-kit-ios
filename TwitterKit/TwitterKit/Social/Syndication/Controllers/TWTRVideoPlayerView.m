@@ -111,7 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addVideoControlsToBottomBar:(UIView *)bottomBar
 {
-    self.controlsView.tintColor = [UIColor whiteColor];
+    self.controlsView.tintColor = [UIColor blackColor];
     self.controlsView.translatesAutoresizingMaskIntoConstraints = NO;
     [bottomBar addSubview:self.controlsView];
 

@@ -380,11 +380,11 @@ static TWTRTwitter *sharedTwitter;
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary *)options
 {
     NSString *sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
-    BOOL isSSOBundle = [self.mobileSSO isSSOWithSourceApplication:sourceApplication];
+//    BOOL isSSOBundle = [self.mobileSSO isSSOWithSourceApplication:sourceApplication];
     BOOL isWeb = [self.mobileSSO isWebWithSourceApplication:sourceApplication];
 
-    if (isSSOBundle) {
-        [self.mobileSSO processRedirectURL:url];
+    if ([self.mobileSSO processRedirectURL:url]) {
+        return YES;
     } else if (isWeb) {
         BOOL isTokenValid = [self.mobileSSO verifyOauthTokenResponsefromURL:url];
         if (isTokenValid) {

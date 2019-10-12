@@ -442,7 +442,7 @@ static const CGFloat TWTRImageCornerRadius = 4.0;
 
 - (void)updateBackgroundWithComputedColor:(UIColor *)backgroundColor
 {
-    UIColor *color = [TWTRColorUtil mediaBackgroundColorFromBackgroundColor:backgroundColor];
+    UIColor *color = [UIColor blackColor];
     self.backgroundColor = color;
 }
 

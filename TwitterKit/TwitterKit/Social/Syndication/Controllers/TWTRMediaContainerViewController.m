@@ -93,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     topBar.translatesAutoresizingMaskIntoConstraints = NO;
     topBar.backgroundColor = [UIColor clearColor];
-    topBar.tintColor = [UIColor whiteColor];
+    topBar.tintColor = [UIColor blackColor];
     [self.view addSubview:topBar];
 
     NSDictionary *views = NSDictionaryOfVariableBindings(topBar);
