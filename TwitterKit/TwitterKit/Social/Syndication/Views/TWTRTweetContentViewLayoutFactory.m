@@ -163,13 +163,13 @@
     [TWTRViewUtil addVisualConstraints:@"H:|-regularMargin-[media]-regularMargin-|" metrics:metrics views:views];  // Main image full width
 
     // Vertical
-    [TWTRViewUtil constraintToTopOfSuperview:contentView.mediaView].active = YES;
-    _imageBottomConstraint = [TWTRViewUtil marginConstraintBetweenTopView:contentView.mediaView bottomView:contentView.profileHeaderView];
-    _imageBottomConstraint.constant = self.metrics.marginTop;
-    [TWTRViewUtil addVisualConstraints:@"V:[profileHeader]-profileHeaderMarginBottom-[text]" metrics:metrics views:views];
+    [TWTRViewUtil constraintToTopOfSuperview:contentView.profileHeaderView].active = YES;
+//    _imageBottomConstraint = [TWTRViewUtil marginConstraintBetweenTopView:contentView.profileHeaderView bottomView:contentView.mediaView];
+//    _imageBottomConstraint.constant = self.metrics.marginTop;
+    [TWTRViewUtil addVisualConstraints:@"V:[profileHeader]-profileHeaderMarginBottom-[media]-profileHeaderMarginBottom-[text]" metrics:metrics views:views];
     [TWTRViewUtil addVisualConstraints:@"V:[text]|" views:views];
 
-    _imageBottomConstraint.active = YES;
+//    _imageBottomConstraint.active = YES;
 }
 
 - (void)setShowingMedia:(BOOL)showingMedia
