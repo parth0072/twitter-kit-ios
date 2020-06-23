@@ -74,6 +74,18 @@
     return [sourceApplication hasPrefix:@"com.apple"] || [sourceApplication isEqualToString:bundleID];
 }
 
+- (BOOL)isSSOWithURL:(NSURL *)url
+{
+    if (url == nil) return NO;
+    return [self.loginURLParser isTwitterKitRedirectURL:url];
+}
+
+- (BOOL)isWebWithURL:(NSURL *)url
+{
+    if (url == nil) return NO;
+    return [url.host isEqualToString:@"callback"];
+}
+
 - (void)triggerInvalidSourceError
 {
     dispatch_async(dispatch_get_main_queue(), ^{
